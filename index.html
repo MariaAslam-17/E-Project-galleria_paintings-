@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galleria Home Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+    }
+
+    /* HERO BACKGROUND */
+    .hero {
+      background: url('main pic.jpg') no-repeat center center/cover;
+      height: 80vh;
+      color: white;
+      position: relative;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      width: 100%;
+      padding: 20px 40px;
+    }
+
+    /* NAVBAR STYLES */
+    .navbar-custom {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: transparent;
+      color: white;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-custom.scrolled {
+      position: fixed;
+      background: white;
+      color: black;
+      /* box-shadow: 0 2px 8px rgba(172, 24, 24, 0.1); */
+      height: 19px;
+    }
+
+    .navbar-custom .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .logo {
+      height: 60px;
+      transition: height 0.3s ease;
+      font-size: 30px;
+      padding-top: 5px;
+    }
+
+    .navbar-custom.scrolled .logo img {
+      height: 50px;
+    }
+
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .center-text h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .search-bar input {
+      padding: 12px 25px;
+      width: 1000px;
+      max-width: 90%;
+      border-radius: 25px;
+      border: none;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .category-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .category-links a {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+
+    .category-links a:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    h2{
+     
+      text-align: center;
+      font-size: 25px;
+      padding-top: 55px;
+      text-align: center;
+    }
+
+    /* <carouel section> */
+
+    .carousel-container {
+      padding-top: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      border: #111 3px;
+      
+    }
+    h5{
+        color: black;
+        text-shadow: black;
+    }
+    p{
+        color: black;
+        text-shadow: black;
+    }
+    .carousel-container{
+      color: white;
+    }
+    
+/* Hero */
+.INFO {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+.INFO h1 {
+  font-size: 2rem;
+  color: #888;
+}
+.INFO h6 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+/* Content */
+.content {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.content p {
+  margin-bottom: 1.2rem;
+}
+.content figure {
+  margin: 2rem 0;
+  text-align: center;
+  
+}
+.content figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+.content figcaption a {
+  color: #007BFF;
+  text-decoration: none;
+}
+.content img{
+  max-width: 800px;
+}
+
+
+    /* <mailing section> */
+
+      body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .mailing-section {
+  background-image: url('main pic.jpg'); /* Replace with your image path or URL */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 20px;
+  text-align: center;
+  color: white; /* Optional: make text readable */
+}
+
+    .mailing-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .mailing-text {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #0b0c2a; /* dark text */
+    }
+
+    .mailing-input {
+      padding: 15px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      width: 250px;
+      outline: none;
+    }
+
+    .mailing-button {
+      padding: 15px 25px;
+      font-size: 1rem;
+      background-color: #d8c91f; /* pink-red button */
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .mailing-button:hover {
+      background-color: #494844;
+    }
+
+    @media (max-width: 600px) {
+      .mailing-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .mailing-input, .mailing-button {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+/* <footer> */
+     .fancy-footer {
+      background: #e2e2e2;
+      color: #333;
+      padding: 60px 20px 30px;
+      font-family: 'Segoe UI', sans-serif;
+      box-shadow: 0 -2px 25px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .footer-section h2{
+      margin-bottom: 15px;
+      color: #8b0000;
+      font-size: 1.5em;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .footer-section h3 {
+      margin-bottom: 15px;
+      color: #8b0000;
+      font-size: 1.5em;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: #333;
+      font-size: 1em;
+      line-height: 1.6;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      color: #000;
+      transform: translateX(6px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
+      font-size: 0.9em;
+    }
+
+    @media screen and (max-width: 768px) {
+      .self-card {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar-custom" id="navbar">
+    <div class="logo">
+      <!-- <img src="G.png" alt="Galleria Logo"> --><b>Galleria</b>
+    </div>
+    <div class="nav-links">
+      <a href="zohafin.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="faqs.html">Faqs</a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <div class="overlay">
+      <div class="center-text">
+        <h1>WHERE EVERY STROKES TELLS A STORY</h1>
+        <div class="search-bar">
+          <input type="text" placeholder="Search artworks, collections, artists..." />
+        </div>
+        <div class="category-links">
+          <a href="figurative.html">Figurative Paintings</a>
+          <a href="nature.html">Nature Paintings</a>
+          <a href="religious.html">Religious Painting</a>
+          <a href="abs.html">Abstract Paintings</a>
+          <a href="FLOWER.html">Flower Paintings</a>
+          <a href="landscape.html">Landscape Painting</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOTSTRAP CAROUSEL -->
+   <h2>Over 5.5 million+ high quality stock images, videos and music shared by our talented community.
+</h2>
+  <div class="carousel-container">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="m1.jpg" class="d-block w-100" alt="Slide 1" height="500px">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>The Demons (1994)</h5>
+            <p>Watercolour by Slav Nedev</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="m2.jpg" class="d-block w-100" alt="Slide 2" height="500px">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Harbor Island Bahamas (2000)</h5>
+            <p>Oil painting by David Kofton</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="m3.jpg" class="d-block w-100" alt="Slide 3" height="500px">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>To the light (2017)</h5>
+            <p>Watercolour by Volodymyr Melnychuk</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- JS to toggle navbar style on scroll -->
+  <script>
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+<main>
+  <section class="INFO">
+    <h1>Art History</h1>
+    <h6>Top Figurative Painting Sales in Auction Houses</h6>
+  </section>
+
+  <article class="content">
+    <h4>By Galleria Collection</h4>
+    <p>Since the popularity of the internet and online purchasing, globalism has allowed a strengthened art market to take shape, as artists and works previously found only in regional markets began to dot the landscapes of New York, Paris, and London in record numbers. In the early years of this new era, contemporary and abstract works by international artist were found everywhere, and figurative art seemed only a blip on the screen of art sales.  However, along with the shift in world attention to the conflicts humans have been suffering for thousands of years (with the focus on recent events), so have artists been using the human experience in a more basic form of expression: Figurative art. It has it been climbing the ranks of art sales as it grows in popularity by art collectors and has been in a relative boom for the last 10 years. A March 2017 Sotheby’s London sale provided several multimillion dollar sales in Figurative works. With a drastic increase in Figurative art auction sales, one may wonder if this is a lasting development or simply a short-lived fad. Let’s discover some of the reasons why…and proof of…its explosive growth.</p>
+    <figure>
+      <img src="H1.png" alt="The Scream, Edvard Munch"/>
+      <figcaption>
+        Edvard Munch, <em>The Scream</em>, 1893<br/>
+        Digital Art and Online Auction
+      </figcaption>
+    </figure>
+
+    <p>Figurative Art’s Long History and Short Comeback
+
+      For most of history, figurative art remained popular. It exemplified mankind’s recreation of human experience and proof of important human events from the past. However, it experienced a relatively long period of disinterest as artists explored new avenues of creativity, using color, shapes, and exciting mediums like innovative techniques and emotional expression to showcase their skills, leaving some of the commemorative aspects to photography, which could (obviously) provide precise reality in pictures.
+      
+      In this most recent trend of figurative art popularity, there is a return to balance between the human shape and personal point of view in figurative art. The artist’s individual opinion of the figure in art is reflected in the interpretation of the human form itself. We see an increase in the interest of buyers to find and purchase more personal pieces, which represent events, situations, and the human form in a manner which art enthusiasts recognize.</p>
+
+    <figure>
+      <img src="H2.png" alt="The Scream, Edvard Munch"/>
+      <figcaption>
+        Edvard Munch, <em>The Scream</em>, 1893<br/>
+        Digital Art and Online Auction
+      </figcaption>
+    </figure>
+
+    <p><B>Digital Art and Online Access</B><BR>Growth in online access to art, both in basic availability of works for viewing and of online purchasing options, has opened the world of art in all its forms and styles no matter their location, to collectors found everywhere if they have a computer and a credit card. This has enhanced buyer confidence in making art purchases and provided auction-goers with the boldness to purchase more art based on their taste and less on what’s “popular.” Trends support this in both increased prices paid for art and the variety of works sold.</p>
+
+    <figure>
+      <img src="H3.png" alt="Wheatfield with Crows – Van Gogh"/>
+      <figcaption>
+        Vincent Van Gogh, <em>Wheatfield with Crows</em>, 1890<br/>
+        Leads in online figurative art
+      </figcaption>
+    </figure>
+
+    <p><B>Leaders in the Rise of Figurative Art</B><BR>
+
+      It cannot be denied that when at museums “talk”, (art) people listen. When museums use wars, refugees, and social discourse as fodder for new shows and exhibitions, the resulting styles will shortly appear in galleries, art fairs, and auction houses. Such has been the situation in the last 5-8 years. MoMA curators understood the value of the human figure in its ability to showcase human diversity in a way abstraction never can; thus, figurative art began its quick rise to the top again. Supported by digital art, caricatures and the natural connection between art and fashion (after all, clothing IS artistically designed to be placed on the human figure), figurative art has been welcomed back! </p>
+
+    <figure>
+      <img src="H4.png" alt="The Kiss, Klimt"/>
+      <figcaption>
+        Gustav Klimt, <em>The Kiss</em>, 1907–1908<br/>
+        Some Figurative Art Sales at Auction
+      </figcaption>
+    </figure>
+
+    <p><B>Some Figurate Art Sales at Auction<BR><BR></B>
+
+      Although works by well-known “masters” in any genre are known to bring extremely high prices
+     (Picasso’s painting of Les Femmes d’Alger sold for $179m in 2015 and last year, Leonardo da Vinci’s
+      Salvator Mundi sold for $450 million), figurative paintings selling for over $1m continue to increase
+     every year, with the growth happening quicker since 2013. In fact, since 2006, it has been a consistent 
+     trend outside of recession-caused blips in the chart. The volume of sales has developed even more impressively,
+     with modern figurative artworks in demand as well as those works created pre-abstract times. Some of the
+     most outstanding modern figurative artists with impressive chunks of market share are George Condo ($52m) and
+     Peter Doig ($240m). Doig’s White Canoe brought $11.3 million in 2007.<BR><BR>
+      
+      <B>How Long Can the Figurative Art Market Maintain This Boom<BR><BR></B>
+      
+      Although typical of the sales of all genres of art, most of the highest sales are for the works of a few leading artists.
+     However, he volume of figurative art works sold continues to grow, which is a positive sign for both figurative artists and
+     collectors. There very will may come a time when it is no longer acceptable in art circles to purchase figurative art, but
+     for the time being, there are a plethora of outstanding works to be had by enthusiasts worldwide.  </p>
+
+    <figure>
+      <img src="H5.png" alt="Girl with a Pearl Earring"/>
+      <figcaption>
+        Johannes Vermeer, <em>Girl with a Pearl Earring</em>, 1665<br/>
+        Sybaris Collection
+      </figcaption>
+    </figure>
+
+    <h4>Galleria Collection</h4>
+
+      <P>The Sybaris team is dedicated to finding unique works of art from locations around the 
+      world to share examples of culturally rich heritages to our discriminating members.
+       Let us help you discover figurative art pieces to suit your taste and budget.</p>
+  </article>
+</main>
+
+
+  
+<!-- <mailing section> -->
+ <section class="mailing-section">
+    <div class="mailing-container">
+      <div class="mailing-text">Join our mailing list</div>
+      <input type="email" class="mailing-input" placeholder="Enter email address" />
+      <button class="mailing-button">Sign up</button>
+    </div>
+  </section>
+
+  <footer class="fancy-footer">
+  <div class="footer-container">
+    <div class="footer-section about">
+      <!-- <h2>Gallery</h2> -->
+      <p>Blending nature, emotion, and imagination — one painting at a time. Step into a world of color and creativity.</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <a href="zohafin.html"><i class="fas fa-home"></i> Home</a>
+      <a href="faqs.html"><i class="fas fa-palette"></i>Faqs</a>
+      <a href="about.html"><i class="fas fa-user"></i> About</a>
+      <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+
+    <div class="footer-section social">
+      <h3>Follow Us</h3>
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>; 2025  Gallery — All rights reserved ✦ Designed with passion for art.</p>
+  </div>
+</footer>
+
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

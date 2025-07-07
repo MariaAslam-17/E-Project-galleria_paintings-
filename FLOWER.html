@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flower Art</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .hero {
+      background: url('main pic.jpg') no-repeat center center/cover;
+      height: 80vh;
+      color: white;
+      position: relative;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      width: 100%;
+      padding: 20px 40px;
+    }
+
+    .navbar-custom {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: transparent;
+      color: white;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-custom.scrolled {
+      position: fixed;
+      background: white;
+      color: black;
+      height: 20px;
+    }
+
+    .navbar-custom .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .logo {
+      height: 60px;
+      transition: height 0.3s ease;
+      font-size: 30px;
+      padding-top: 5px;
+    }
+
+    .navbar-custom.scrolled .logo img {
+      height: 50px;
+    }
+
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .center-text h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .search-bar input {
+      padding: 12px 25px;
+      width: 1000px;
+      max-width: 90%;
+      border-radius: 25px;
+      border: none;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .category-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .category-links a,
+    .filter-btn {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .category-links a:hover,
+    .filter-btn:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    h2 {
+      font-size: 20px;
+      padding-top: 55px;
+      text-align: center;
+    }
+    
+
+    .card {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-radius: 15px;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .self-card {
+      width: 30%;
+      text-align: center;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 470px;
+     
+    }
+
+    .self-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .self-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .self-card img:hover {
+      transform: scale(1.03);
+    }
+
+    .texts {
+      color: rgb(225, 147, 147);
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 5px;
+      padding: 10px 20px;
+      background-color: rgb(180, 72, 72);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      /* margin-bottom: 100px; */
+    }
+
+    button a {
+      text-decoration: none;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #4a4e4d;
+      transform: translateY(-3px);
+    }
+
+   .fancy-footer {
+  background: #f5f5f5;
+  color: #333;
+  padding: 60px 20px 30px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 -2px 25px rgba(0, 0, 0, 0.05);
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.footer-section h2,
+.footer-section h3 {
+  margin-bottom: 15px;
+  color: #8b0000;
+  font-size: 1.4em;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+}
+
+.footer-section p,
+.footer-section a {
+  color: #333;
+  font-size: 1em;
+  line-height: 1.6;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #000;
+  transform: translateX(5px);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9em;
+}
+
+
+    @media screen and (max-width: 768px) {
+      .self-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div class="navbar-custom" id="navbar">
+    <div class="logo">
+      <b>Galleria</b>
+    </div>
+    <div class="nav-links">
+      <a href="zohafin.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="faqs.html">Faqs</a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <div class="overlay">
+      <div class="center-text">
+        <h1>WHERE EVERY STROKE TELLS A STORY</h1>
+        <div class="search-bar">
+          <input type="text" placeholder="Search artworks, collections, artists..." />
+        </div>
+        <div class="category-links">
+          <button class="filter-btn" onclick="filterCards('all')">All</button>
+          <button class="filter-btn" onclick="filterCards('acrylic')">Acrylic</button>
+          <button class="filter-btn" onclick="filterCards('charcoal')">Charcoal</button>
+          <button class="filter-btn" onclick="filterCards('oil')">Oil</button>
+          <button class="filter-btn" onclick="filterCards('poster')">Poster</button>
+          <button class="filter-btn" onclick="filterCards('watercolor')">Watercolor</button>
+          <button class="filter-btn" onclick="filterCards('ballpoint')">Ballpoint</button>
+          <button class="filter-btn" onclick="filterCards('enamel')">Enamel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY SECTION -->
+  <div style="text-align: center; color: #333; margin-top: 30px;">
+    <h1> FLOWER PAINTINGS</h1>
+  </div>
+
+  <div class="card" id="gallery">
+    <div class="self-card acrylic">
+      <img src="FL 1.jpg" alt="Painting 1">
+      <div class="texts">
+        <h3>Whispers of Tranquility</h3>
+        <h3>RS:5,000</h3>
+        <button><a href="FL 1.html">Buy Now</a></button>
+      </div>
+    </div>
+    <div class="self-card acrylic">
+      <img src="FL 2.jpg" alt="Painting 2">
+      <div class="texts">
+        <h3>Echoes of Twilight</h3>
+        <h3>RS:3,000</h3>
+        <button><a href="FL 2.html">Buy Now</a></button>
+      </div>
+    </div>
+    <div class="self-card ballpoint">
+      <img src="FL 3.jpg" alt="Painting 3">
+      <div class="texts">
+        <h3>Inkbound Horizons</h3>
+        <h3>RS:7,000</h3>
+        <button><a href="FL 3.html">Buy Now</a></button>
+      </div>
+    </div>
+    <div class="self-card ballpoint">
+      <img src="FL 4.png" alt="Painting 4">
+      <div class="texts">
+        <h3>Lines of Solitude</h3>
+        <h3>RS:6,000</h3>
+        <button><a href="FL 4.html">Buy Now</a></button>
+      </div>
+    </div>
+    <div class="self-card charcoal">
+      <img src="FL 5.jpg" alt="Painting 5">
+      <div class="texts">
+        <h3>Shadows and Silence</h3>
+        <h3>RS:10,000</h3>
+        <button><a href="FL 5.html">Buy Now</a></button>
+      </div>
+    </div>
+ 
+
+            <div class="self-card charcoal">
+                <img src="FL 6.jpg" alt="Painting 2">
+                <div class="texts">
+                    <h3>Monochrome Reverie</h3>
+                    <h3>RS:11,000</h3>
+                    <button><a href="FL 6.html">Buy Now </a></button>
+                </div>
+            </div>
+
+            <div class="self-card watercolor">
+                <img src="FL 7.jpg" alt="Painting 3">
+                <div class="texts">
+                    <h3>Misty Reflections</h3>
+                    <h3>RS:9,000</h3>
+                    <button><a href="FL 7.html">Buy Now</a></button>
+                </div>
+            </div>
+            
+             <div class="self-card watercolor">
+                <img src="FL 8.png" alt="Painting 1">
+                <div class="texts">
+                    <h3>Sunset Over Still Waters</h3>
+                    <h3>RS:7,000</h3>
+                    <button><a href="FL 8.html">Buy Now</a></button>
+                </div>
+            </div>
+             <div class="self-card oil">
+                <img src="FL 9.jpg" alt="Painting 3">
+                <div class="texts">
+                    <h3>Golden Bloom</h3>
+                    <h3>RS:20,000</h3>
+                    <button><a href="FL 9.html">Buy Now</a></button>
+                </div>
+            </div>
+            <div class="self-card oil">
+                <img src="FL 10.png" alt="Painting 2">
+                <div class="texts">
+                    <h3>Whispers of Autumn</h3>
+                    <h3>RS:25,000</h3>
+                    <button><a href="FL 10.html">Buy Now</a></button>
+                </div>
+            </div>
+
+            <div class="self-card poster">
+                <img src="FL 11.jpg" alt="Painting 3">
+                <div class="texts">
+                    <h3>Urban Echo</h3>
+                    <h3>RS:8,000</h3>
+                    <button><a href="FL 11.html">Buy Now</a></button>
+                </div>
+            </div>
+             <div class="self-card poster">
+                <img src="FL 12.jpg" alt="Painting 1">
+                <div class="texts">
+                    <h3>Voices of the Abstract</h3>
+                    <h3>RS:15,000</h3>
+                    <button><a href="FL 12.html">Buy Now</a></button>
+                </div>
+            </div>
+
+            <div class="self-card enamel">
+                <img src="FL 13.jpg" alt="Painting 2">
+                <div class="texts">
+                    <h3>Gleam of Stillness</h3>
+                    <h3>RS:9,000</h3>
+                    <button><a href="FL 13.html">Buy Now</a></button>
+                </div>
+            </div>
+
+        
+             <div class="self-card enamel">
+                <img src="FL 14.png" alt="Painting 1">
+                <div class="texts">
+                    <h3>Metallic Mirage</h3>
+                    <h3>RS:25,000</h3>
+                    <button><a href="FL 14.html">Buy Now</a></button>
+                </div>
+            </div>
+
+            <div class="self-card All">
+                <img src="FL 15.jpg" alt="Painting 2">
+                <div class="texts">
+                    <h3>Grace in Bloom</h3>
+                    <h3>RS:18,000</h3>
+                    <button><a href="FL 15.html">Buy Now</a></button>
+                </div>
+            </div>
+<!-- FOOTER -->
+<footer class="fancy-footer">
+  <div class="footer-container">
+    <!-- About Section -->
+    <div class="footer-section about">
+      <p>Blending nature, emotion, and imagination — one painting at a time. Step into a world of color and creativity.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="zohafin.html">Home</a></li>
+        <li><a href="faqs.html">Faqs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Links -->
+    <div class="footer-section social">
+      <h3>Follow Us</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Galleria — All rights reserved ✦ Designed with passion for art.</p>
+  </div>
+</footer>
+
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    function filterCards(category) {
+      const cards = document.querySelectorAll('.self-card');
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'block';
+        } else {
+          if (card.classList.contains(category)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    }
+  </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

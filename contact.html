@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Gallery Contact</title>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    
+  }
+  
+  body {
+    color: #111;
+    line-height: 1.6;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  
+  .navbar {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+  }
+  
+  .menu a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #111;
+  }
+  
+  .contact-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .contact-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+  }
+  
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .column h3 {
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+  .form-map-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 40px;
+    border-radius: 8px;
+  
+    /* Add background image */
+    background-image: url('main\ pic.jpg'); /* YAHAN IMAGE LAGAO & I LOVE YOU BABE <3 (: */
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+  
+  .contact-form {
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  .contact-form button {
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .map-box {
+    flex: 1;
+  }
+  
+  .map-placeholder {
+    background: #ddd;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .address {
+    font-size: 14px;
+  }
+  
+  .footer {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    font-size: 14px;
+  }
+  
+  .footer-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-columns div {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .footer-columns h4 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-columns input {
+    padding: 8px;
+    margin-bottom: 5px;
+    width: 80%;
+  }
+  
+  .footer-columns button {
+    padding: 8px 12px;
+    background: black;
+    color: white;
+    border: none;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">Galleria</h1>
+      <nav class="menu">
+        <a href="zohafin.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="faqs.html">Faqs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="columns">
+      <div class="column">
+        <h3>Artists Submissions</h3>
+        <p>Daily: 10 a.m. – 5 p.m.<br>Monday & Holidays: Closed!</p>
+      </div>
+      <div class="column">
+        <h3>Exhibitions Gallery</h3>
+        <a href="#">Dutch Artist</a><br>
+        <a href="#">Modern Exhibitions</a>
+      </div>
+      <div class="column">
+        <h3>Gallery Offices</h3>
+        <p>Magic Pictures<br>Installation "Future Divi Life"</p>
+      </div>
+    </div>
+
+    <div class="form-map-wrapper">
+      <form class="contact-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div class="map-box">
+        <div class="map-placeholder">
+            <div class="form-map-wrapper">
+                <form class="contact-form">
+                  <input type="text" placeholder="Name" required>
+                  <input type="email" placeholder="Email" required>
+                  <textarea placeholder="Message" required></textarea>
+                  <button type="submit">Submit</button>
+                </form>
+              
+                <div class="map-box">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.145678789!2d-122.41941568468158!3d37.77492977975964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c6b2f34e1%3A0xbcc4d7d63f5fbb57!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1614784944092!5m2!1sen!2sus"
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+              </div>
+        </div>
+        <div class="address">
+          <strong>1234 Divi St. #1000, San Francisco, CA 94103</strong>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-columns">
+      <div>
+        <h4>Address</h4>
+        <p>1234 Divi St, #1000<br>San Francisco, CA 23514, USA<br>(246) 351-3613</p>
+        <a href="#">Visit Us</a>
+      </div>
+      <div>
+        <h4>Open Hours</h4>
+        <p>Monday – Friday: 10am – 5pm<br>Weekends: 10am – 9pm<br>Holidays: Closed</p>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <p>F X G+ 📸</p>
+      </div>
+      <div>
+        <h4>Subscribe</h4>
+        <input type="email" placeholder="Email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Designed by ZOHA NADEEM AKA ZOYI </p>
+    </div>
+  </footer>
+</body>
+</html>
